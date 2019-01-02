@@ -6,3 +6,6 @@
 <%= trail.address %>
 <%= trail.length %>
 <% end %>
+<h2>Longest Trail on Trip</h2>
+<%= @longest_trail.name if @longest_trail%>
+<%= @longest_trail.length if @longest_trail %>

@@ -15,6 +15,10 @@ class Trip < ApplicationRecord
       total_hiking_distance/total_hike_count
     else
       total_hiking_distance
-    end 
+    end
+  end
+
+  def longest_trail
+    trails.order(length: :desc).first
   end
 end

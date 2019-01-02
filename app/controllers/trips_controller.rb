@@ -5,5 +5,6 @@ class TripsController < ApplicationController
 
   def show
     @trip = Trip.find(params[:id])
+    @longest_trail = @trip.longest_trail
   end
 end

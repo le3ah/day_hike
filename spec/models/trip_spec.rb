@@ -34,5 +34,15 @@ RSpec.describe Trip, type: :model do
       expect(trip_1.longest_trail.name).to eq(trail_2.name)
       expect(trip_1.longest_trail.length).to eq(trail_2.length)
     end
+
+    it "#shortest_trail" do
+      trip_1 = Trip.create(name: "Fall Hike", start_date: "September 1", end_date: "September 15")
+      trail_1 = trip_1.trails.create(name: "Big Trail", address: "Alabama", length: 300)
+      trail_2 = trip_1.trails.create(name: "Little Trail", address: "South Carolina", length: 600)
+      trail_3 = trip_1.trails.create(name: "Medium Trail", address: "New Hampshire", length: 30)
+
+      expect(trip_1.shortest_trail.name).to eq(trail_3.name)
+      expect(trip_1.shortest_trail.length).to eq(trail_3.length)
+    end
   end
 end

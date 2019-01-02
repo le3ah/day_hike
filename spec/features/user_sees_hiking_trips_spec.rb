@@ -38,7 +38,7 @@ describe  'as a visitor' do
     expect(page).to have_content(trip_1.average_hiking_distance)
   end
 
-  it "should see Longest Trail on Trip" do
+  it "should see Longest Trail & Shortest Trail on Trip" do
     trip_1 = Trip.create(name: "Fall Hike", start_date: "September 1", end_date: "September 15")
     trail_1 = trip_1.trails.create(name: "Big Trail", address: "Alabama", length: 300)
     trail_2 = trip_1.trails.create(name: "Little Trail", address: "South Carolina", length: 600)
@@ -46,9 +46,15 @@ describe  'as a visitor' do
 
     visit trip_path(trip_1)
 
-    expect(page).to have_content("Longest Trail on Trip")
-
-    expect(page).to have_content(trip_1.longest_trail.name)
-    expect(page).to have_content(trip_1.longest_trail.length)
+    within '#longest_trail' do
+      expect(page).to have_content("Longest Trail on Trip")
+      expect(page).to have_content(trip_1.longest_trail.name)
+      expect(page).to have_content(trip_1.longest_trail.length)
+    end
+    within '#shortest_trail' do
+      expect(page).to have_content("Shortest Trail on Trip")
+      expect(page).to have_content(trip_1.shortest_trail.name)
+      expect(page).to have_content(trip_1.shortest_trail.length)
+    end
   end
 end

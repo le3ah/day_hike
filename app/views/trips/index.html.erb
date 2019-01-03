@@ -2,3 +2,6 @@
 <%= trip.name %>
 <%= link_to trip.name, trip_path(trip) %>
 <% end %>
+<% if flash[:success] %>
+<%= flash[:success] %>
+<% end %>

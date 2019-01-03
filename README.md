@@ -123,13 +123,10 @@ when I visit a trail's page,
 I see the total number of hiking trips where this trail
 was included
 ```
-
+```
 User Story 11
-
 As a visitor
-
 When I visit the register path
-
 I see a form with the following fields:
 
 - name
@@ -138,11 +135,9 @@ I see a form with the following fields:
 - password confirmation
 
 When I submit my data,
-
 I am returned to the trip index path,
-
 and I see a flash message letting me know I have successfully registered
-
+```
 
 User Story 12
 

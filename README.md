@@ -138,18 +138,15 @@ When I submit my data,
 I am returned to the trip index path,
 and I see a flash message letting me know I have successfully registered
 ```
-
+```
 User Story 12
 
 As a registered user
-
 When I visit the login path
-
 I see a field to enter my email address and password
-
 When I submit valid information
-
 I am redirected to my profile page
+```
 
 User Story 13
 As a visitor
@@ -160,6 +157,7 @@ At the top of every page I see the following links:
 - a link to register
 
 As a registered user I see the same links, but instead of a link to register I see a link to log in if I am logged out or log out if I am logged in
+
 
 User Story 14
 

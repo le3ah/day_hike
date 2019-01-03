@@ -6,11 +6,17 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     if @user.save
+      session[:user_id] = @user.id
       flash[:success] ="You have successfully registered"
       redirect_to trips_path
     else
       render :new
-    end 
+    end
+  end
+
+  def show
+
+    @user = User.find(session[:user_id])
   end
 
   private

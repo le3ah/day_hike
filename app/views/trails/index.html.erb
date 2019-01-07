@@ -1,0 +1,9 @@
+<% @trails.each do |trail| %>
+<div id="trail-<%= trail.id %>">
+
+  <%= trail.name %>
+  <% if current_user && current_user.admin? %>
+    <%= link_to "Edit Trail", edit_admin_trail_path(trail) %>
+  <% end %>
+</div>
+<% end %>

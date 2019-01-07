@@ -147,6 +147,48 @@ I see a field to enter my email address and password
 When I submit valid information
 I am redirected to my profile page
 ```
+```
+User Story 13
+As a visitor,
+When I visit a trail’s page,
+I see a link to view the water sources on that trail.
+When I click on the link,
+My path is something like ‘/trails/5/watersources’
+I see a list of the water sources on that trail
+The list includes the name and the mile marker for the water source.
+```
+```
+User Story 14
+As a visitor,
+When I visit a trail’s water sources page
+Each water source name is a link
+When I click on the link,
+My path is something like ‘/trails/5/watersources/2’
+I see the name of the water source and the mile marker.
+```
+```
+User Story 15
+As an admin,
+When I visit a trail page
+My path is something like ‘/admin/trails/5’
+And I see everything a visitor sees
+I also see a link to edit the trail
+I also see a link to delete the trail
+(*bonus: actually implement edit/updating - consider shallow nesting here*)
+(Visitors or default users do NOT see this link - also check that they can NOT navigate to this path)
+(Will have to implement Users with roles for this)
+```
+```
+User Story 16
+As an admin,
+When I visit a trail page,
+I see a link to the water sources on that trail
+When I click on the link,
+My path is something like ‘admin/trails/5/watersources’
+And I see the name and mile marker of the water sources
+(again, make sure visitors can NOT navigate to this path)
+```
+
 
 User Story 13
 As a visitor

@@ -1,0 +1,4 @@
+<%= @trail.watersources.each do |watersource| %>
+<%= link_to watersource.name, trail_watersource_path(@trail, watersource) %>
+<%= watersource.mile %>
+<% end %>

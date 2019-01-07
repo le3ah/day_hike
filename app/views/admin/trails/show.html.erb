@@ -1,0 +1,17 @@
+<%= @trail.name %>
+<%= @trail.address %>
+<div id="trail-<%= @trail.id %>">
+
+<%= link_to "Edit Trail", edit_admin_trail_path(@trail) %>
+<%= link_to "Delete Trail", admin_trail_path(@trail), method: :delete %>
+</div>
+<% @trail.trips.each do |trip| %>
+<%= trip.name %>
+<%= trip.total_hiking_distance %>
+<% end %>
+<%= @trail.total_trip_count %>
+<% if current_user && current_user.default? %>
+<%= link_to "View Watersources", "/trails/#{@trail.id}/watersources" %>
+<% else %>
+<%= link_to "View All Watersources", admin_trail_watersources_path(@trail) %>
+<% end %>

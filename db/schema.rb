@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190103035253) do
+ActiveRecord::Schema.define(version: 20190107014427) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,8 +40,17 @@ ActiveRecord::Schema.define(version: 20190103035253) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "role", default: 0
+  end
+
+  create_table "watersources", force: :cascade do |t|
+    t.string "name"
+    t.integer "mile"
+    t.bigint "trail_id"
+    t.index ["trail_id"], name: "index_watersources_on_trail_id"
   end
 
   add_foreign_key "trip_trails", "trails"
   add_foreign_key "trip_trails", "trips"
+  add_foreign_key "watersources", "trails"
 end
